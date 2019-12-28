@@ -10,9 +10,7 @@ Main features:
 - Django Rest Framework API
 - MongoDB database with Djongo
 - API permissions and authorizations
-- API token access with simpleJWT
-
-
+- API token access with simpleJWT  
 - API calls with Axios (CRUD, login, registration)
 - JWT Token handling (HTTP headers for login and permisions)
 - React Hooks and reusable code
