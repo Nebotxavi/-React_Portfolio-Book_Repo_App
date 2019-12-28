@@ -1,0 +1,159 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Books table Books table component renders (snapshot) 1`] = `
+<table
+  className="table table-hover"
+>
+  <thead>
+    <tr>
+      <th>
+        Title
+      </th>
+      <th>
+        Author
+      </th>
+      <th>
+        Genre
+      </th>
+      <th>
+        Rate
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        Cold Blood
+      </td>
+      <td>
+        Truman Capote
+      </td>
+      <td>
+        1
+      </td>
+      <td>
+        10
+      </td>
+    </tr>
+    <tr>
+      <td>
+        En la frontera
+      </td>
+      <td>
+        Cormac McCarthy
+      </td>
+      <td>
+        1
+      </td>
+      <td>
+        10
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Testing 1
+      </td>
+      <td>
+        Pep Atlas
+      </td>
+      <td>
+        2
+      </td>
+      <td>
+        6
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Peim 1
+      </td>
+      <td>
+        Pep Nyony
+      </td>
+      <td>
+        2
+      </td>
+      <td>
+        7
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Filter menu Filter menu component renders (snapshot) 1`] = `
+<ul
+  className="list-group"
+>
+  <li
+    className="list-group-item list-group-item-action disabled"
+  >
+    americana
+  </li>
+  <li
+    className="list-group-item list-group-item-action disabled"
+  >
+    drama
+  </li>
+</ul>
+`;
+
+exports[`NavBar NavBar component renders (snapshot) 1`] = `
+<nav
+  className="navbar navbar-expand-lg navbar-light bg-light"
+>
+  <a
+    className="navbar-brand"
+    href="/"
+    onClick={[Function]}
+  >
+    Book Repo
+  </a>
+  <button
+    aria-controls="navbarNavAltMarkup"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+    className="navbar-toggler"
+    data-target="#navbarNavAltMarkup"
+    data-toggle="collapse"
+    type="button"
+  >
+    <span
+      className="navbar-toggler-icon"
+    />
+  </button>
+  <div
+    className="collapse navbar-collapse"
+    id="navbarNavAltMarkup"
+  >
+    <div
+      className="navbar-nav"
+    >
+      <a
+        aria-current={null}
+        className="nav-item nav-link"
+        href="/books"
+        onClick={[Function]}
+      >
+        Books
+      </a>
+      <a
+        aria-current={null}
+        className="nav-item nav-link"
+        href="/login"
+        onClick={[Function]}
+      >
+        Login
+      </a>
+      <a
+        aria-current={null}
+        className="nav-item nav-link"
+        href="/register"
+        onClick={[Function]}
+      >
+        Register
+      </a>
+    </div>
+  </div>
+</nav>
+`;
