@@ -12,6 +12,7 @@ Main features:
 - API permissions and authorizations
 - API token access with simpleJWT
 
+
 - API calls with Axios (CRUD, login, registration)
 - JWT Token handling (HTTP headers for login and permisions)
 - React Hooks and reusable code
