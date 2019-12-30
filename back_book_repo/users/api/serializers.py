@@ -2,7 +2,7 @@ from rest_framework import serializers
 
 from django.db.models import Q
 from django.contrib.auth import get_user_model
-from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer, TokenObtainSlidingSerializer
 from rest_framework_simplejwt.tokens import RefreshToken
 
 from rest_framework.exceptions import ValidationError
@@ -80,7 +80,7 @@ class UserCreateSerializer(serializers.ModelSerializer):
         return validated_data
 
 
-class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
+class MyTokenObtainSlidingSerializer(TokenObtainSlidingSerializer):
     @classmethod
     def get_token(cls, user):
         token = super().get_token(user)

@@ -11,7 +11,16 @@ export async function login({ username, password }) {
     username,
     password
   });
-  localStorage.setItem(tokenKey, token.access);
+  localStorage.setItem(tokenKey, token[tokenKey]);
+}
+
+export async function refreshToken() {
+  if (!getJwt()) return;
+  const currentToken = getJwt();
+  const { data: token } = await http.post(apiEndpoint + "refresh/", {
+    token: currentToken
+  });
+  localStorage.setItem(tokenKey, token[tokenKey]);
 }
 
 export function logout() {

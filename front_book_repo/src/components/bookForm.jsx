@@ -107,10 +107,14 @@ const BookForm = ({ history, match: itemRef }) => {
   }
 
   async function doSubmit() {
-    const mappedBook = mapToFetchApi();
-    if (!isNew) await updateBook(book.id, mappedBook);
-    else await saveBook(mappedBook);
-    history.push("/");
+    try {
+      const mappedBook = mapToFetchApi();
+      if (!isNew) await updateBook(book.id, mappedBook);
+      else await saveBook(mappedBook);
+      history.push("/");
+    } catch (ex) {
+      if (ex.response && ex.response.status === 401) setIsExpired(true);
+    }
   }
 
   return (
