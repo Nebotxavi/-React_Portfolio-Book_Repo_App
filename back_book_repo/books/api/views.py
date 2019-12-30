@@ -11,6 +11,7 @@ from .serializers import BookListSerializer, BookCreateUpdateSerializer
 from .permissions import IsOwnerOrReadOnly
 from rest_framework.permissions import (AllowAny,
                                         IsAdminUser,
+                                        IsAuthenticated
                                         )
 
 
@@ -24,7 +25,7 @@ class BookListAPIView(ListAPIView):
 class BookDetailAPIView(RetrieveAPIView):
     queryset = Book.objects.all()
     serializer_class = BookListSerializer
-    permission_classes = [AllowAny]
+    permission_classes = [IsAuthenticated]
 
 
 class BookUpdateAPIView(RetrieveUpdateAPIView):
@@ -42,7 +43,6 @@ class BookDeleteAPIView(DestroyAPIView):
 class BookCreateAPIView(CreateAPIView):
     queryset = Book.objects.all()
     serializer_class = BookCreateUpdateSerializer
-    #permission_classes = [IsOwnerOrReadOnly]
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
