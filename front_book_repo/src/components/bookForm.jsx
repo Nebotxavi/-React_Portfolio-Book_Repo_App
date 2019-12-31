@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Joi from "joi-browser";
 import { Redirect } from "react-router-dom";
+import Loader from "react-loader-spinner";
 
 import { getBook, updateBook, saveBook } from "../services/booksService";
 import { getGenres } from "../services/genresService";
@@ -117,17 +118,34 @@ const BookForm = ({ history, match: itemRef }) => {
     }
   }
 
+  const loaderStyle = {
+    position: "absolute",
+    textAlign: "center",
+    width: "100%",
+    top: "20%"
+  };
+
   return (
-    <Form
-      inputList={inputList}
-      data={book}
-      setData={setBook}
-      errors={errors}
-      setErrors={setErrors}
-      genres={genres}
-      schema={schema}
-      doSubmit={doSubmit}
-    />
+    <React.Fragment>
+      <Loader
+        type="Circles"
+        color="#00BFFF"
+        height={100}
+        width={100}
+        timeout={1500}
+        style={loaderStyle}
+      />
+      <Form
+        inputList={inputList}
+        data={book}
+        setData={setBook}
+        errors={errors}
+        setErrors={setErrors}
+        genres={genres}
+        schema={schema}
+        doSubmit={doSubmit}
+      />
+    </React.Fragment>
   );
 };
 

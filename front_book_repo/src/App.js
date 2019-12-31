@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "font-awesome/css/font-awesome.css";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 import { Route, Switch, Redirect } from "react-router-dom";
 

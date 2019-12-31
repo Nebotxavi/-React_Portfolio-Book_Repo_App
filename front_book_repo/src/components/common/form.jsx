@@ -94,7 +94,7 @@ const Form = ({
   };
 
   return (
-    <form action="" onSubmit={handleSubmit}>
+    <form action="" onSubmit={handleSubmit} className="bookForm">
       {inputList.map(inputs => renderElement(inputs))}
     </form>
   );

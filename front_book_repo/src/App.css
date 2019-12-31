@@ -52,3 +52,7 @@
 .clickable {
   cursor: pointer;
 }
+
+.bookForm {
+  z-index: 10;
+}

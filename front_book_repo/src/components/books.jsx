@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import _ from "lodash";
 import { Redirect } from "react-router-dom";
+import Loader from "react-loader-spinner";
 
 import BooksTable from "./booksTable";
 import FilterMenu from "./common/filterMenu";
@@ -126,6 +127,14 @@ const Books = ({ user }) => {
           sortColumn={sortColumn}
           setSortColumn={setSortColumn}
           handleDelete={handleDelete}
+        />
+        <Loader
+          type="Circles"
+          color="#00BFFF"
+          height={100}
+          width={100}
+          timeout={3000}
+          style={{ textAlign: "center" }}
         />
         <Pagination
           pageSize={pageSize}
