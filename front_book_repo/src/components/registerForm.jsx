@@ -22,14 +22,21 @@ const RegisterForm = ({ history }) => {
       .required()
       .email()
       .label("Email"),
-    emailConfirmation: Joi.string()
-      .required()
-      .email()
-      .label("Mail confirmation"),
+    emailConfirmation: Joi.ref("email"),
+    // .string()
+    // .required()
+    // .email()
+    // .label("Mail confirmation"),
     password: Joi.string()
-      .min(5)
+      .regex(/^[\w!.-]{5,30}$/)
       .required()
       .label("Password")
+      .error(() => {
+        return {
+          message:
+            "Password must contain at least 5 alphanumeric characters and/or the following special characters: !_-."
+        };
+      })
   };
 
   const inputList = [

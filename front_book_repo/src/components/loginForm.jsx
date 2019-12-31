@@ -18,6 +18,7 @@ const LoginForm = ({ location }) => {
     email: Joi.string().allow(""),
     password: Joi.string()
       .required()
+      .min(5)
       .label("Password")
   };
 

@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Input = ({ name, label, type, error, value, handleChange }) => {
+  const [showErrors, setShowErrors] = useState(false);
+
   return (
     <div className="form-group">
       <label htmlFor={`input-${name}`}>{label}</label>
@@ -11,8 +13,9 @@ const Input = ({ name, label, type, error, value, handleChange }) => {
         className="form-control"
         value={value}
         onChange={handleChange}
+        onBlur={() => setShowErrors(true)}
       />
-      {error && <div className="alert alert-danger">{error}</div>}
+      {showErrors && error && <div className="alert alert-danger">{error}</div>}
     </div>
   );
 };
