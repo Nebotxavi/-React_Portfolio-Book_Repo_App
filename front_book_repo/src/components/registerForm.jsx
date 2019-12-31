@@ -22,11 +22,10 @@ const RegisterForm = ({ history }) => {
       .required()
       .email()
       .label("Email"),
-    emailConfirmation: Joi.ref("email"),
-    // .string()
-    // .required()
-    // .email()
-    // .label("Mail confirmation"),
+    emailConfirmation: Joi.string()
+      .required()
+      .email()
+      .label("Mail confirmation"),
     password: Joi.string()
       .regex(/^[\w!.-]{5,30}$/)
       .required()
