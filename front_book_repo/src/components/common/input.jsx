@@ -13,6 +13,7 @@ const Input = ({ name, label, type, error, value, handleChange }) => {
         className="form-control"
         value={value}
         onChange={handleChange}
+        onFocus={() => setShowErrors(false)}
         onBlur={() => setShowErrors(true)}
       />
       {showErrors && error && <div className="alert alert-danger">{error}</div>}

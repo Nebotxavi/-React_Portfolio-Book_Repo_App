@@ -24,16 +24,21 @@ const RegisterForm = ({ history }) => {
       .label("Email"),
     emailConfirmation: Joi.string()
       .required()
-      .email()
+      .valid(Joi.ref("email"))
+      .options({
+        language: { any: { allowOnly: "must match Email." } }
+      })
       .label("Mail confirmation"),
     password: Joi.string()
-      .regex(/^[\w!.-]{5,30}$/)
+      .regex(
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/
+      )
       .required()
       .label("Password")
       .error(() => {
         return {
           message:
-            "Password must contain at least 5 alphanumeric characters and/or the following special characters: !_-."
+            "Password must contain at least 8 characters, including one uppercase, a number and a special character: [@$!%*?&]"
         };
       })
   };
