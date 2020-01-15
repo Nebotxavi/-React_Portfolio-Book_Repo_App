@@ -20,3 +20,6 @@ Front freatures:
 - Routing (Protected routes, redirection after login, etc.)
 - Pagination, filtering, sorting, searching.
 - Forms validation with Joi
+
+Deployed version: https://stormy-bastion-60347.herokuapp.com/books
+It will take some time to load the first time due to server limitations.
